@@ -12,4 +12,6 @@ mongoose.connect(config.mongoose.url,config.mongoose.options).then(()=>{
     app.listen(8082,()=>{
         console.log(`Listening to port ${config.port}`);
     });
+}).catch(err=>{
+    console.log(err);
 });
