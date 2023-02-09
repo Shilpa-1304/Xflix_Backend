@@ -9,7 +9,7 @@ let server;
 mongoose.set('strictQuery', true);
 mongoose.connect(config.mongoose.url,config.mongoose.options).then(()=>{
     console.log("Connected to MongoDB: "+config.mongoose.url);
-    app.listen(config.port,()=>{
+    app.listen( process.env.PORT || config.port,()=>{
         console.log(`Listening to port ${config.port}`);
     });
 }).catch(err=>{
